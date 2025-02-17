@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Detalles de la Categoría{% endblock %}
+
+{% block contenido %}
+<h2>Detalles de la Categoría</h2>
+<p><strong>Nombre:</strong> {{ categoria['nombre'] }}</p>
+<p><strong>Descripción:</strong> {{ categoria['descripcion'] }}</p>
+<h3>Productos en esta Categoría:</h3>
+<ul>
+    {% for producto in categoria['productos'] %}
+    <li>{{ producto['nombre'] }}</li>
+    {% endfor %}
+</ul>
+<a href="/">Volver</a>
+{% endblock %}

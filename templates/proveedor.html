@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Detalles del Proveedor{% endblock %}
+
+{% block contenido %}
+<h2>Detalles del Proveedor</h2>
+<p><strong>Nombre:</strong> {{ proveedor['nombre'] }}</p>
+<p><strong>Dirección:</strong> {{ proveedor['direccion'] }}</p>
+<p><strong>Teléfono:</strong> {{ proveedor['telefono'] }}</p>
+<h3>Productos suministrados por este Proveedor:</h3>
+<ul>
+    {% for producto in proveedor['productos'] %}
+    <li>{{ producto['nombre'] }}</li>
+    {% endfor %}
+</ul>
+<a href="/">Volver</a>
+{% endblock %}

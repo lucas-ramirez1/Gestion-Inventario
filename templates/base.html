@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gestión de Inventario{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Registro de Inventario</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('registrar_producto') }}">Registrar Productos</a></li>
+            <li><a href="{{ url_for('registrar_categoria') }}">Registrar Categorías</a></li>
+            <li><a href="{{ url_for('registrar_proveedor') }}">Registrar Proveedores</a></li>
+            <li><a href="{{ url_for('registrar_bodega') }}">Registrar Bodega</a></li>
+            <li><a href="{{ url_for('gestionar_stock') }}">Gestionar de Stock</a></li>
+            <li><a href="{{ url_for('consultar_info') }}">Consultar Información</a></li>
+            <li><a href="{{ url_for('informe_stock') }}">Informe de Stock</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 SantxX</p>
+    </footer>
+</body>
+</html>
+

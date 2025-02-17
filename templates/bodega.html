@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Detalles de la Bodega{% endblock %}
+
+{% block contenido %}
+<h2>Detalles de la Bodega</h2>
+<p><strong>Nombre:</strong> {{ bodega['nombre'] }}</p>
+<p><strong>Ubicación:</strong> {{ bodega['ubicacion'] }}</p>
+<p><strong>Capacidad Máxima:</strong> {{ bodega['capacidad'] }}</p>
+<h3>Productos almacenados en esta Bodega:</h3>
+<ul>
+    {% for producto in bodega['productos'] %}
+    <li>{{ producto['nombre'] }} (Cantidad: {{ producto['cantidad'] }})</li>
+    {% endfor %}
+</ul>
+<a href="/">Volver</a>
+{% endblock %}
